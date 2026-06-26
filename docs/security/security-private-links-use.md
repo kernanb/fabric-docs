@@ -227,6 +227,16 @@ If you want to disable the Private Link setting, make sure that all the private 
 
 If you're going to disable the Private Link setting, it's recommended to do so during nonbusiness hours. It might take up to 15 minutes of downtime for some scenarios to reflect the change. 
 
+## Disable Private Link for Tenant Migration
+
+If you are migrating your home tenant to a new region you need to delete your private link resources. Please follow these steps:
+
+1. In the Fabric portal, enable public internet access: `Power BI => Admin portal => Tenant settings => Public Internet Access`
+2. In the Azure portal, delete all associated private endpoints you created
+3. In the Azure portal, delete the corresponding private DNS zones
+4. In the Azure portal, delete the private link service (should be only one). Turn on "Show hidden types" when exploring Resource Groups.
+5. IN the Fabric portal, disable the setting: `Power BI => Admin portal => Tenant settings => Tenant-level Private Link`
+
 ## Related content
 
 * [About tenant-level private links](security-private-links-overview.md)
